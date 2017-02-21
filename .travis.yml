@@ -14,19 +14,20 @@ env:
 - PACKAGE_TARGET=rpm
 install: bundle install
 script:
-- make 
+- make
 deploy:
+  matrix:
   - provider: bintray
     file: ".bintray/deb.json"
     user: patdowney
     key:
-      secure: 
+      secure: qQr61NFaV0MagRynEqwIXwcKKno50Sf2MTW2C4XMDe6V1KCtfUCI/etUm7bJPWPl1qQOFeAUJruptKwaGTBLrObKj/kyjeUF1z2jAaLIK/TDvA6mUoorl+qZFJYiHf3MrmC3JjtP9CcVEaA6S9K0Z7ChxJJe6JtrwSCtYkvVsPhXD55z86fcwPyGDLqlEEJTas83whXj/WFRDe6cK0+Sv8FCtXIcmklMs/v9lE7aLHXH/dsNlQSuvK/gquvNMQn86ms5DigNzFsySjfxVf6hFhVLk1ZO91oyF5peId3Hp2DtfQnbINqaG8NDLn/4EBSpnFO1JRfsjN7zr9kv8huekPWtUWyn1pHV3dyuuXnrp7T2WiZIvRNy6H9WBvulOeMN1hTfMBR3qWzmQmfqBEPYxhH+JLihh/SB5WUebIYS0miNqE8KnU7XvlpXS3AeOvyZdvSJH+ySSXnbPeRmzfnIHPBAa0LeS6Qn6hYA1A1RtuFjgt9LyFBmqe0KtMD4fr7QO9362wuhYQZhzaDiT94mXwdn3dGDmzUgEhcFYYcwphEfNLuXgmTXU27+mfvQpIPN1Gak3jieETKh7olj71cSze/nLGZUvcuPZPcUxtTKI9VRmCjyE8WxTTAdHcsuI3JE0qd7KENaK1/lVNYrQKEjKBylEGo/OUMFnx/X9KLwgUY=
     on:
       condition: "$PACKAGE_TARGET = deb"
   - provider: bintray
     file: ".bintray/rpm.json"
     user: patdowney
     key:
-      secure: 
+      secure: qQr61NFaV0MagRynEqwIXwcKKno50Sf2MTW2C4XMDe6V1KCtfUCI/etUm7bJPWPl1qQOFeAUJruptKwaGTBLrObKj/kyjeUF1z2jAaLIK/TDvA6mUoorl+qZFJYiHf3MrmC3JjtP9CcVEaA6S9K0Z7ChxJJe6JtrwSCtYkvVsPhXD55z86fcwPyGDLqlEEJTas83whXj/WFRDe6cK0+Sv8FCtXIcmklMs/v9lE7aLHXH/dsNlQSuvK/gquvNMQn86ms5DigNzFsySjfxVf6hFhVLk1ZO91oyF5peId3Hp2DtfQnbINqaG8NDLn/4EBSpnFO1JRfsjN7zr9kv8huekPWtUWyn1pHV3dyuuXnrp7T2WiZIvRNy6H9WBvulOeMN1hTfMBR3qWzmQmfqBEPYxhH+JLihh/SB5WUebIYS0miNqE8KnU7XvlpXS3AeOvyZdvSJH+ySSXnbPeRmzfnIHPBAa0LeS6Qn6hYA1A1RtuFjgt9LyFBmqe0KtMD4fr7QO9362wuhYQZhzaDiT94mXwdn3dGDmzUgEhcFYYcwphEfNLuXgmTXU27+mfvQpIPN1Gak3jieETKh7olj71cSze/nLGZUvcuPZPcUxtTKI9VRmCjyE8WxTTAdHcsuI3JE0qd7KENaK1/lVNYrQKEjKBylEGo/OUMFnx/X9KLwgUY=
     on:
       condition: "$PACKAGE_TARGET = rpm"
