@@ -1,6 +1,6 @@
 
 PACKAGE_PRODUCT=consul-template
-PACKAGE_VERSION=0.19.3
+PACKAGE_VERSION=0.19.4
 ARCH="386 amd64 arm"
 
 default: package bintray
